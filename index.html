@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spriteverse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Spritelogo.png" alt="Logo" />
+        <span>Spriteverse</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#artwork">Artwork</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Welcome to<br>Spriteverse</h1>
+  </div>
+  <div class="hero-video">
+    <div class="gif-wrapper">
+      <img src="Spritegif.gif" alt="Spriteverse Animation" class="hero-gif" />
+    </div>
+  </div>
+</section>
+
+</header>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Spriteverse</h2>
+        <p>
+          Spriteverse is the home for the Irys community<br>Here, every artwork, creative idea, and their hard work is given a place to shine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artwork Section -->
+  <section class="artwork-section" id="artwork">
+     <div class="artwork-header">
+  <h2>Artwork by Community</h2>
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      <a href="https://x.com/0xMacrypt/status/1949030885225091383" target="_blank" class="art-item">
+        <img src="Macrypt.jpg" alt="Art 1" />
+        <div class="overlay">by @0xMacrypt</div>
+      </a>
+      <a href="https://x.com/akun2" target="_blank" class="art-item">
+        <img src="art2.jpg" alt="Art 2" />
+        <div class="overlay">by @akun2</div>
+      </a>
+      <a href="https://x.com/akun3" target="_blank" class="art-item">
+        <img src="art3.jpg" alt="Art 3" />
+        <div class="overlay">by @akun3</div>
+      </a>
+
+      <!-- Duplicated for loop -->
+      <a href="https://x.com/0xMacrypt/status/1949030885225091383" target="_blank" class="art-item">
+        <img src="Macrypt.jpg" alt="Art 1" />
+        <div class="overlay">by @0xMacrypt</div>
+      </a>
+      <a href="https://x.com/akun2" target="_blank" class="art-item">
+        <img src="art2.jpg" alt="Art 2" />
+        <div class="overlay">by @akun2</div>
+      </a>
+      <a href="https://x.com/akun3" target="_blank" class="art-item">
+        <img src="art3.jpg" alt="Art 3" />
+        <div class="overlay">by @akun3</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Script: Navbar Hide on Scroll -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop && scrollTop > 200) {
+        navbar.classList.add('hidden');
+      } else {
+        navbar.classList.remove('hidden');
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
+
+</body>
+</html>
