@@ -206,7 +206,7 @@ body {
 /* Artwork Section */
 .artwork-section {
   min-height: 100vh;
-  background: #88d0ff;
+  background: #4effd3;
   padding: 60px 0;
   overflow: hidden;
 }
@@ -265,8 +265,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(45, 42, 42, 0.6);
-  color: white;
+  background:#0a0a0a24;
+  color: #ffffff;
   padding: 8px;
   text-align: center;
   font-size: 14px;
@@ -295,16 +295,6 @@ body {
 .artwork-header {
   text-align: center;
   margin-bottom: 30px;
-}
-
-.artwork-header h2 {
-  display: inline-block;
-  background: blur(#0a0a0a); /* warna gradasi */
-  color: #00ffc3;
-  padding: 10px 25px;
-  border-radius: 15px;
-  font-size: 28px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
