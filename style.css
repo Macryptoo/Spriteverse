@@ -103,7 +103,7 @@ body {
   gap: -1rem; /* TAMBAHKAN JARAK ANTAR KEDUANYA */
   padding: 2rem 1rem;
   min-height: 100vh;
-  background: url('/photo.jpg') no-repeat center top / cover;
+  background: url('photo.jpg') no-repeat center top / cover;
   background-position-y: 30%;
   position: relative;
 }
