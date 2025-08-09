@@ -100,7 +100,7 @@ body {
   display: flex;
   justify-content: center; /* GANTI INI */
   align-items: center;
-  gap: -1rem; /* TAMBAHKAN JARAK ANTAR KEDUANYA */
+  gap: 2rem; /* TAMBAHKAN JARAK ANTAR KEDUANYA */
   padding: 2rem 1rem;
   min-height: 100vh;
   background: url('photo.jpg') no-repeat center top / cover;
@@ -219,15 +219,14 @@ body {
 
 .marquee-wrapper {
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   position: relative;
 }
 
 .marquee {
   display: flex;
-  width: max-content;
-  animation: scroll-left 10s linear infinite;
   gap: 40px;
+  width: max-content;
 }
 
 .marquee img {
@@ -235,21 +234,38 @@ body {
   border-radius: 12px;
   flex-shrink: 0;
 }
-  
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+
+/* Baris pertama */
+.marquee-row-1 {
+  animation: scroll-left 15s linear infinite;
 }
+
+/* Baris kedua (arah kebalikan) */
+.marquee-row-2 {
+  animation: scroll-right 15s linear infinite;
+  margin-top: 40px; /* jarak antar baris */
+}
+.marquee-row-1:hover,
+.marquee-row-2:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 
 .art-item {
   position: relative;
   display: inline-block;
-  margin-right: 20px; /* spasi antar gambar */
-  overflow: hidden; /* penting agar overlay tidak keluar dari gambar */
+  overflow: hidden;
 }
 
 .art-item img {
@@ -259,13 +275,12 @@ body {
   display: block;
 }
 
-/* Overlay pas di dalam gambar */
 .art-item .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background:#0a0a0a24;
+  background: #0a0a0a24;
   color: #ffffff;
   padding: 8px;
   text-align: center;
@@ -274,29 +289,17 @@ body {
   transition: 0.3s ease;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  pointer-events: none; /* agar tidak ganggu klik ke <a> */
+  pointer-events: none;
 }
 
-/* Saat hover gambar, overlay muncul */
 .art-item:hover .overlay {
   opacity: 1;
-  pointer-events: auto; /* aktifkan kembali klik jika perlu */
+  pointer-events: auto;
 }
 
-/* Show overlay and pause animation on hover */
-.art-item:hover .overlay {
-  opacity: 1;
-}
-
-.marquee:hover {
+.marquee-row:hover {
   animation-play-state: paused;
 }
-
-.artwork-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 
 /* Padding tambahan agar konten tidak ketutup navbar */
 .hero,
@@ -304,3 +307,25 @@ body {
 .artwork {
   padding-top: 100px;
 }
+
+.under-construction {
+  min-height: 100vh;
+  background: #111; /* warna gelap polos */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.uc-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.uc-content p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
